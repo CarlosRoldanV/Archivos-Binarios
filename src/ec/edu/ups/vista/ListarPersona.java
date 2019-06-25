@@ -58,9 +58,9 @@ public class ListarPersona extends javax.swing.JInternalFrame {
                 double salario = archivo.readDouble();
                 Object[] datos = {
                     cedula,
-                    apellido,
                     nombre,
-                    edad,
+                    apellido,
+                     edad,
                     fecha,
                     celular,
                     salario,

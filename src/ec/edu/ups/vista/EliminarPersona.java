@@ -309,16 +309,18 @@ int posicion;
         try {
            String ruta = "datos";
            RandomAccessFile archivo = new RandomAccessFile(ruta, "rw");
+           int posicion = Integer.parseInt(txtbuscar.getText()) * 152;
+           
             archivo.seek(posicion);
             String palabra = null;
 
             archivo.writeUTF("                                                  ");
             archivo.writeUTF("                                                  ");
             archivo.writeUTF("          ");
-            archivo.writeUTF("  ");
+            archivo.writeInt(0);
             archivo.writeUTF("          ");
             archivo.writeUTF("          ");
-            archivo.writeUTF("      ");
+            archivo.writeDouble(0.0);
             archivo.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(EliminarPersona.class.getName()).log(Level.SEVERE, null, ex);
