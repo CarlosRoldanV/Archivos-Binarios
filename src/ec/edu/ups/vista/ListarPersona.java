@@ -39,7 +39,7 @@ public class ListarPersona extends javax.swing.JInternalFrame {
         // Es un arreglo de un objeto
         while (con == 0) {
             try {
-                String ruta = "C:\\Users\\Carlos\\OneDrive\\Documentos\\NetBeansProjects\\ArchivosBinarios\\src\\ec\\edu\\ups\\archivo\\datos.txt";
+                String ruta = "datos";
                 RandomAccessFile archivo = new RandomAccessFile(ruta, "r");
                 posicion = c * 152;
                 archivo.seek(posicion);
@@ -87,7 +87,11 @@ public class ListarPersona extends javax.swing.JInternalFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        btncanclear = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
@@ -114,11 +118,26 @@ public class ListarPersona extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, -1));
 
+        btncanclear.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btncanclear.setText("Cancelar");
+        btncanclear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncanclearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btncanclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btncanclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncanclearActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btncanclearActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncanclear;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables

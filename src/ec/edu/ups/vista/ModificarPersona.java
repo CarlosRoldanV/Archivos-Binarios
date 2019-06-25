@@ -260,7 +260,7 @@ int posicion;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String ruta = "C:\\Users\\Carlos\\OneDrive\\Documentos\\NetBeansProjects\\ArchivosBinarios\\src\\ec\\edu\\ups\\archivo\\datos.txt";
+        String ruta = "datos";
         try {
             RandomAccessFile archivo = new RandomAccessFile(ruta, "r");
             int posicion = Integer.parseInt(txtbuscar.getText()) * 152;
@@ -293,7 +293,7 @@ int posicion;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String ruta = "C:\\Users\\Carlos\\OneDrive\\Documentos\\NetBeansProjects\\ArchivosBinarios\\src\\ec\\edu\\ups\\archivo\\datos.txt";
+        String ruta = "datos";
         Persona persona = new Persona();
         String nombre = txtnombres.getText();
         String apellido = txtapellido.getText();

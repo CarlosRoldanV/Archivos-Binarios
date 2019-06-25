@@ -241,7 +241,7 @@ public class CrearPersona extends javax.swing.JInternalFrame {
 
     private void btnvalidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvalidarActionPerformed
         // TODO add your handling code here:
-      String ruta ="C:\\Users\\Carlos\\OneDrive\\Documentos\\NetBeansProjects\\ArchivosBinarios\\src\\ec\\edu\\ups\\archivo\\datos.txt";
+      String ruta ="datos";
          Persona persona = new Persona();
         String nombre = txtnombres.getText();
         String apellido = txtapellido.getText();
@@ -272,7 +272,7 @@ public class CrearPersona extends javax.swing.JInternalFrame {
                 archivo.writeInt(Integer.parseInt(txtedad.getText()));
                 archivo.writeUTF(txtfn.getText());
                 archivo.writeUTF(txtcelular.getText());
-                archivo.writeDouble(Double.parseDouble(txtfn.getText()));
+                archivo.writeDouble(Double.parseDouble(txtsueldo.getText()));
             }
             archivo.close();
 

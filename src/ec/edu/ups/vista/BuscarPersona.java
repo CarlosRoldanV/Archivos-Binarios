@@ -251,7 +251,7 @@ public class BuscarPersona extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String ruta = "C:\\Users\\Carlos\\OneDrive\\Documentos\\NetBeansProjects\\ArchivosBinarios\\src\\ec\\edu\\ups\\archivo\\datos.txt";
+        String ruta = "datos";
         try {
             RandomAccessFile archivo = new RandomAccessFile(ruta, "r");
             int posicion = Integer.parseInt(txtbuscar.getText()) * 152;
@@ -270,9 +270,7 @@ public class BuscarPersona extends javax.swing.JInternalFrame {
                 txtcelular.setText(archivo.readUTF());
                 archivo.seek(posicion + 144);
                 txtsueldo.setText(String.valueOf(archivo.readDouble()));
-            /*else{
-                JOptionPane.showMessageDialog(this, "Persona no registrada", "Error", JOptionPane.OK_OPTION);
-            }*/
+                
             archivo.close();
 
         } catch (FileNotFoundException ex) {

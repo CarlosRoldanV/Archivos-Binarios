@@ -11,7 +11,7 @@ package ec.edu.ups.modelo;
  */
 public class ValidacionEdad extends Exception{
 
-    public ValidacionEdad() {
+    public ValidacionEdad(String la_edad_debe_estar_comprendida_entre_20_y) {
         super("La edad debe estar entre los 20 y 30 años");
     }
     

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -267,7 +268,7 @@ int posicion;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String ruta = "C:\\Users\\Carlos\\OneDrive\\Documentos\\NetBeansProjects\\ArchivosBinarios\\src\\ec\\edu\\ups\\archivo\\datos.txt";
+        String ruta = "datos";
         try {
             RandomAccessFile archivo = new RandomAccessFile(ruta, "r");
             int posicion = Integer.parseInt(txtbuscar.getText()) * 152;
@@ -304,32 +305,35 @@ int posicion;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String ruta = "C:\\Users\\Carlos\\OneDrive\\Documentos\\NetBeansProjects\\ArchivosBinarios\\src\\ec\\edu\\ups\\archivo\\datos.txt";
+        
         try {
-            RandomAccessFile archivo = new RandomAccessFile(ruta, "r");
-            posicion = Integer.parseInt(txtbuscar.getText()) * 152;
+           String ruta = "datos";
+           RandomAccessFile archivo = new RandomAccessFile(ruta, "rw");
             archivo.seek(posicion);
-            
-                txtnombres.setText(archivo.readUTF().trim());
-                archivo.seek(posicion + 52);
-                txtapellido.setText(archivo.readUTF().trim());
-                archivo.seek(posicion + 104);
-                txtcedula1.setText(archivo.readUTF());
-                archivo.seek(posicion + 116);
-                txtedad.setText(String.valueOf(archivo.readInt()));
-                archivo.seek(posicion + 120);
-                txtfn.setText(archivo.readUTF());
-                archivo.seek(posicion + 132);
-                txtcelular.setText(archivo.readUTF());
-                archivo.seek(posicion + 144);
-                txtsueldo.setText(String.valueOf(archivo.readDouble()));               
-          
+            String palabra = null;
+
+            archivo.writeUTF("                                                  ");
+            archivo.writeUTF("                                                  ");
+            archivo.writeUTF("          ");
+            archivo.writeUTF("  ");
+            archivo.writeUTF("          ");
+            archivo.writeUTF("          ");
+            archivo.writeUTF("      ");
             archivo.close();
         } catch (FileNotFoundException ex) {
-
+            Logger.getLogger(EliminarPersona.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException e) {
             System.out.println("Error de escritura");
         }
+        JOptionPane.showMessageDialog(this, "Persona eliminada","Eliminar Persona",JOptionPane.OK_OPTION);
+        txtcedula1.setText("");
+        txtnombres.setText("");
+        txtapellido.setText("");
+        txtcelular.setText("");
+        txtedad.setText("");
+        txtfn.setText("");
+        txtsueldo.setText("");
+        txtbuscar.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

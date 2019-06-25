@@ -111,7 +111,7 @@ public class Persona {
         if (edad >= 20 && edad <= 35) {
             this.edad = edad;
         } else {
-            throw new ValidacionEdad();
+            throw new ValidacionEdad("La edad debe estar comprendida entre 20 y 35 años");
         }
     }
 
