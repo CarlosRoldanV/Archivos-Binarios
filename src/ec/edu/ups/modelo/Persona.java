@@ -5,6 +5,8 @@
  */
 package ec.edu.ups.modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author Carlos
@@ -14,11 +16,12 @@ public class Persona {
     private String nombre;
     private String apellido;
     private int edad;
-    private String fecha;
+    private Date fecha;
     private String celular;
     private double salario;
 
     public Persona() {
+    
     }
 
     public String getCedula() {
@@ -115,11 +118,11 @@ public class Persona {
         }
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
-    public void setFecha(String fecha) throws ValidacionFechaNacimiento {
-        if (fecha.contains("/")){
+    public void setFecha(Date fecha) throws ValidacionFechaNacimiento {
+        if (fecha.equals("-")){
                 this.fecha = fecha;
         }else{
                 throw new ValidacionFechaNacimiento("La fecha es incorrecta");
@@ -150,4 +153,20 @@ if (celular.length()==100){
             throw new ValidacionSueldo();
         }
     }
+
+    public Persona(String cedula, String nombre, String apellido, int edad, Date fecha, String celular, double salario) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.fecha = fecha;
+        this.celular = celular;
+        this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", fecha=" + fecha + ", celular=" + celular + ", salario=" + salario + '}';
+    }
+   
 }
